@@ -1,0 +1,97 @@
+<div [hidden]="submitted">
+    <h4>Nuevo Usuario</h4>
+
+    <div class="row">
+        <form class="col s12" (ngSubmit)="onSubmit()" #cirujanoForm="ngForm">
+            <div class="row ">
+                <div class="col m6">
+                    <div class="input field col s12">
+                        <label for="nombre">Nombre</label>
+                        <input type="text" class="validate" id="nombre" [(ngModel)]="model.nombre" name="nombre" #name="ngModel">
+                    </div>
+                    <div class="input field col s12">
+                        <label for="apellidoPaterno">Apellido Paterno</label>
+                        <input type="text" class="validate" id="apellidoPaterno" [(ngModel)]="model.apellidoPaterno" name="apellidoPaterno" #name="ngModel">
+                    </div>
+                    <div class="input field col s12">
+                        <label for="apellidoMaterno">Apellido Materno</label>
+                        <input type="text" class="validate" id="apellidoMaterno" [(ngModel)]="model.apellidoMaterno" name="apellidoMaterno" #name="ngModel">
+                    </div>
+                    <div class="input field col s12">
+                        <label for="iniciales">Iniciales</label>
+                        <input type="text" class="validate" id="iniciales" [(ngModel)]="model.iniciales" name="iniciales" #name="ngModel">
+                    </div>
+                    <div class="input field col s12">
+                        <label for="usuario">Usuario</label>
+                        <input type="text" class="validate" id="usuario" [(ngModel)]="model.usuario" name="usuario" #name="ngModel">
+                    </div>
+                    <div class="input field col s12">
+                        <label for="contrasena">Contraseña</label>
+                        <input type="password" class="validate" id="contrasena" [(ngModel)]="model.contrasena" name="contrasena" #name="ngModel">
+                    </div>
+                    <div class="input field col s2">
+                        <label for="edad">Edad</label>
+                        <input type="text" class="form-control" id="edad" [(ngModel)]="model.edad" name="edad" #name="ngModel">
+                    </div>
+                </div>
+                <div class="col m6">
+                    <div class="input field col s12">
+                        <label for="especialidad">Especialidad</label>
+                        <input type="text" class="form-control" id="especialidad" [(ngModel)]="model.especialidad" name="especialidad" #name="ngModel">
+                    </div>
+                    <div class="input field col s12">
+                        <label for="anioRes">Año de residencia</label>
+                        <input type="text" class="form-control" id="anioRes" [(ngModel)]="model.anioRes" name="anioRes" #name="ngModel">
+                    </div>
+                    <div class="input field col s12">
+                        <label for="sexo">Sexo</label>
+                        <select class="browser-default" id="sexo" [(ngModel)]="model.sexo" name="sexo" #name="ngModel">
+                            <option value="" disabled selected>Seleccione una opción</option>
+                            <option *ngFor="let sex of sexo" [value]="sex">{{sex}}</option>
+                        </select>
+                    </div>
+                    <div class="input field col s12">
+                        <label for="manoDominante">Mano Dominante</label>
+                        <select class="browser-default" id="manoDominante" [(ngModel)]="model.manoDominante" name="manoDominante" #name="ngModel">
+                            <option value="" disabled selected>Seleccione una opción</option>
+                            <option *ngFor="let mano of manos" [value]="mano">{{mano}}</option>
+                        </select>
+                    </div>
+                    <div class="input field col s12">
+                        <label for="pregunta1">Experiencia laparoscópica previa en pacientes?:</label>
+                        <select class="browser-default" id="pregunta1" [(ngModel)]="model.pregunta1" name="pregunta1" #name="ngModel">
+                            <option value="" disabled selected>Seleccione una opción</option>
+                            <option *ngFor="let opc of opciones" [value]="opc">{{opc}}</option>
+                        </select>
+                    </div>
+                    <div class="input field col s12">
+                        <label for="pregunta2">Experiencia como asistente de la cámara endoscópica</label>
+                        <select class="browser-default" id="pregunta2" [(ngModel)]="model.pregunta2" name="pregunta2" #name="ngModel">
+                            <option value="" disabled selected>Seleccione una opción</option>
+                            <option *ngFor="let qstn of preguntas" [value]="qstn">{{qstn}}</option>
+                        </select>
+                    </div>
+                    <div class="input field col s12">
+                        <label for="pregunta3">Experiencia como asistente utilizando un instrumento laparoscópico</label>
+                        <select class="browser-default" id="pregunta3" [(ngModel)]="model.pregunta3" name="pregunta3" #name="ngModel">
+                            <option value="" disabled selected>Seleccione una opción</option>
+                            <option *ngFor="let qstn of preguntas" [value]="qstn">{{qstn}}</option>
+                        </select>
+                    </div>
+                    <div class="input field col s12">
+                        <label for="pregunta4">Experiencia como el cirujano principal de algún procedimiento laparoscópico</label>
+                        <select class="browser-default" id="pregunta4" [(ngModel)]="model.pregunta4" name="pregunta4" #name="ngModel">
+                            <option value="" disabled selected>Seleccione una opción</option>
+                            <option *ngFor="let qstn of preguntas" [value]="qstn">{{qstn}}</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col m12">
+                    <button type="button" class="btn btn-default red darken-3 miBoton" (click)="newCirujano(); cirujanoForm.reset()">Registrarse</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

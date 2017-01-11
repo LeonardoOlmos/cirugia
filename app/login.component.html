@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="row">
+        <div class="col m6 push-m3">
+            <div class="card">
+                <div class="card-content">
+                    <h2 class="form-signin-heading">Inicio de sesión</h2>
+
+                    <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
+                        <div class="row">
+                            <div class="input-field col m12">
+                                <i class="material-icons prefix">account_circle</i>
+                                <input id="usuario" type="text" class="validate" required [(ngModel)]="model.usuario" name="usuario" #name="ngModel">
+                                <label for="usuario">Usuario</label>
+                            </div>
+                            <div class="input-field col m12">
+                                <i class="material-icons prefix">vpn_key</i>
+                                <input id="contrasena" type="password" class="validate" required [(ngModel)]="model.contrasena" name="contrasena" #name="ngModel">
+                                <label for="contrasena">Contraseña</label>
+                            </div>
+                            <div class="col m5 push-m4">
+                                <button type="submit" class="btn btn-large cyan">Ingresar</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
